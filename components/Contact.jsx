@@ -1,5 +1,9 @@
-import { EMAIL, OFFICES, PHONES } from '@/lib/nav';
 import { Arrow, Mail, Pin } from './icons';
+
+// New Zealand site: the contact block lists only the Auckland office.
+const EMAIL = 'enquiries@geoporte.co.nz';
+const PHONES = [['+64212870714', '+64 (0) 21 28 70714', 'New Zealand']];
+const OFFICES = [['Auckland', 'New Zealand', '110 Carlton Gore Road, New Market, Auckland, New Zealand 1023']];
 
 // Contact details block, shown on the Home and Contact Us pages only; `cta` adds an "Email us" strip,
 // `map` the office map.
