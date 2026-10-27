@@ -632,7 +632,7 @@ function init() {
   /* ---------- lightbox ---------- */
   const lb = $('#lightbox'),
     lv = $('#lbVideo');
-  $('#openFilm').addEventListener('click', () => {
+  $('#openFilm')?.addEventListener('click', () => {
     lb.classList.add('open');
     lv.currentTime = 0;
     lv.play().catch(() => {});

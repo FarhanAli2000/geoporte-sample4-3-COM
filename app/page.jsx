@@ -136,7 +136,7 @@ export default function Page() {
         <div className="zintro" id="zintro">
           <div className="zintro-in">
             <div className="hero-eyebrow" aria-hidden="true">
-              Engineering for a connected tomorrow
+              Civil, Geotechnical and Structural Engineering
             </div>
             <p aria-hidden="true">Design · Engineering · Advisory</p>
           </div>
@@ -146,6 +146,14 @@ export default function Page() {
               experienced engineers support transport, water, buildings, ports and marine, and mining projects across Australia, New
               Zealand, the UK, Canada and the Middle East.
             </p>
+            <div className="hacts zacts">
+              <a href="#offices" className="pill pill-a magnetic">
+                Choose Your Region <Arrow />
+              </a>{' '}
+              <a href="#services" className="pill pill-o magnetic">
+                Explore Our Services <Arrow />
+              </a>
+            </div>
             <div className="zcue" id="zcue">
               <span />
               Scroll to enter
@@ -155,37 +163,28 @@ export default function Page() {
         <div className="zshade" id="zshade" />
         <div className="wrap hero-in" id="hpanelIn">
           <div className="hero-eyebrow" id="heroEyebrow">
-            <span>Engineering for a connected tomorrow</span>
+            <span>Civil, Geotechnical and Structural Engineering</span>
           </div>
           <h1 id="heroTitle">
             <span className="line">
-              <span>Design</span>
+              <span>Global Expertise,</span>
             </span>
             <span className="line">
-              <span>Engineering</span>
-            </span>
-            <span className="line">
-              <span className="a">Advisory</span>
+              <span className="a">Local Commitment</span>
             </span>
           </h1>
           <p className="hero-lead" id="heroLead">
-            Geoporte leads in risk-based design and management of complex engineering projects.
+            Geoporte is an engineering and advisory consultancy delivering high-impact infrastructure design with quality and agility. Our
+            experienced engineers support transport, water, buildings, ports and marine, and mining projects across Australia, New
+            Zealand, the UK, Canada and the Middle East.
           </p>
           <div className="hacts">
-            <a href="#services" className="clink magnetic" id="heroCta">
-              <span className="ring">
-                <Arrow />
-              </span>
-              <span className="t">Explore our work</span>
+            <a href="#offices" className="pill pill-a magnetic" id="heroCta">
+              Choose Your Region <Arrow />
             </a>{' '}
-            <button className="film" id="openFilm" data-cursor="Play">
-              <i>
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </i>
-              Watch film
-            </button>
+            <a href="#services" className="pill pill-o magnetic">
+              Explore Our Services <Arrow />
+            </a>
           </div>
         </div>
         <div className="ztag" id="ztag">
