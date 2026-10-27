@@ -142,9 +142,9 @@ export default function Page() {
           </div>
           <div className="zfoot">
             <p className="zsub">
-              Civil, geotechnical and structural engineering and advisory for councils, developers, contractors and infrastructure owners
-              across Australia. We bring international experience to local projects, with senior engineers who stay involved from
-              investigation through to construction.
+              Geoporte is an engineering and advisory consultancy delivering high-impact infrastructure design with quality and agility. Our
+              experienced engineers support transport, water, buildings, ports and marine, and mining projects across Australia, New
+              Zealand, the UK, Canada and the Middle East.
             </p>
             <div className="zcue" id="zcue">
               <span />
