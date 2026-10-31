@@ -267,11 +267,11 @@
 /* ---------- stats ---------- */
 .stats{padding-block:70px}
 .stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.stat{padding:6px 28px;border-left:1px solid var(--line);min-width:0;position:relative}
+.stat{padding:6px 28px;border-left:1px solid var(--line);min-width:0;position:relative;display:flex;flex-direction:column}
 .stat:first-child{border-left:0;padding-left:0}
 .stat b{display:block;font:200 clamp(2.8rem,5vw,4.2rem)/1 var(--f-display);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
 .stat b em{font-style:normal;color:var(--amber)}
-.stat p{font-size:.8rem;color:var(--muted);margin-top:10px}
+.stat p{font-size:.8rem;color:var(--muted);margin-top:10px;flex:1}
 .stat .t2{height:1px;background:var(--line-2);margin-top:18px;position:relative}
 .stat .t2 i{position:absolute;left:0;top:-1px;height:3px;width:100%;background:var(--amber);transform:scaleX(0);transform-origin:left;box-shadow:0 0 10px var(--amber)}
 /* ---------- band ---------- */

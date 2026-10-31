@@ -1,5 +1,6 @@
 import { Arrow, Mail, Pin } from './icons';
 import { OFFICES } from '@/lib/nav';
+import OfficeMap from './OfficeMap';
 
 const EMAIL = 'enquiries@geoporte.com';
 const PHONES = [
@@ -34,7 +35,7 @@ export default function Contact({ cta = false, map = false }) {
             </div>
           </div>
         </div>
-        {map && <div className="c-map rv" id="officeMap"></div>}
+        {map && <OfficeMap />}
         {cta && (
           <div className="c-cta rv"><p>Tell us about your next project.</p><a href={'mailto:' + EMAIL} className="pill pill-a magnetic">Email us <Arrow /></a></div>
         )}

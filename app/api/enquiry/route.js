@@ -21,11 +21,17 @@ export async function POST(req) {
 
   const name = clean(data.name, 120).replace(/[\r\n]+/g, ' ');
   const email = clean(data.email, 200);
+  const phone = clean(data.phone, 30);
   const organisation = clean(data.organisation, 200);
-  const sector = clean(data.sector, 60);
+  const country = clean(data.country, 80);
+  const region = clean(data.region, 80);
+  const location = clean(data.location, 120);
+  const enquiryType = clean(data.enquiryType, 60);
+  const sectors = (Array.isArray(data.sectors) ? data.sectors : []).map((s) => clean(s, 40)).filter(Boolean).slice(0, 10).join(', ');
   const message = clean(data.message, 5000);
   const page = clean(data.page, 200).replace(/[^\w\-/]/g, '');
-  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !message) return fail(400, 'Missing or invalid fields');
+  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !/^\+?[\d\s()+-]{6,30}$/.test(phone) || !message || data.consent !== true)
+    return fail(400, 'Missing or invalid fields');
 
   const { GMAIL_USER, GMAIL_APP_PASSWORD, ENQUIRY_TO } = process.env;
   if (!GMAIL_USER || !GMAIL_APP_PASSWORD) {
@@ -36,7 +42,7 @@ export async function POST(req) {
   // Logo and links need a public URL; local testing falls back to the live site.
   const origin = new URL(req.url).origin;
   const siteUrl = /localhost|127\.0\.0\.1/.test(origin) ? 'https://geoporte-sample4-3.vercel.app' : origin;
-  const { subject, html, text } = enquiryEmail({ name, email, organisation, sector, message, page, siteUrl });
+  const { subject, html, text } = enquiryEmail({ name, email, phone, organisation, country, region, location, enquiryType, sectors, message, page, siteUrl });
 
   try {
     const transporter = nodemailer.createTransport({ service: 'gmail', auth: { user: GMAIL_USER, pass: GMAIL_APP_PASSWORD } });

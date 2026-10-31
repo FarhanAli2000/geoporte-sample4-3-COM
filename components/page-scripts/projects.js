@@ -129,6 +129,9 @@ function init() {
     fr = t.dataset.r;
     render(true);
   });
+  // Home-page sector rows link here as /projects?sector=N#index.
+  const qs = new URLSearchParams(location.search).get('sector');
+  if (qs && SECTORS[+qs]) fs = +qs;
   render(false);
 
   /* ---------- helpers ---------- */

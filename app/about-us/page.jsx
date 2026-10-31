@@ -27,11 +27,11 @@ export default function Page() {
           <div>
             <h1 id="pTitle">
               <span className="line">
-                <span>We are a</span>
+                <span>We Are A</span>
               </span>
               <span className="line">
                 <span>
-                  <span className="a">trusted</span> team.
+                  <span className="a">Trusted</span> Team
                 </span>
               </span>
             </h1>

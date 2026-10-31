@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "gsap": "3.12.5",
+    "leaflet": "^1.9.4",
     "lenis": "1.1.13",
     "next": "16.4.3",
     "nodemailer": "10.2.1",

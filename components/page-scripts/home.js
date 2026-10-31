@@ -219,17 +219,33 @@ function init() {
   setTimeout(() => mv($('#menu > li > a.active')), 400);
   document.fonts.ready.then(() => mv($('#menu > li > a.active'))); // re-measure once the web font has replaced the fallback
   addEventListener('resize', () => mv($('#menu > li > a.active')));
+  // page section -> href of the menu item the ink should sit under
+  const secLink = {
+    home: '#home',
+    services: '#services',
+    experience: '/about-us',
+    projects: '/projects',
+    sectors: '#services',
+    stats: '/about-us',
+    band: '/contact-us',
+    enquiry: '/contact-us',
+    footer: '/contact-us',
+  };
   const sio = new IntersectionObserver(
     (es) =>
       es.forEach((e) => {
         if (e.isIntersecting) {
-          links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+          const href = secLink[e.target.id || e.target.tagName.toLowerCase()];
+          links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === href));
           mv($('#menu > li > a.active'));
         }
       }),
     { rootMargin: '-45% 0px -50% 0px' },
   );
-  ['home', 'services', 'projects', 'sectors', 'band', 'contact'].forEach((id) => sio.observe(document.getElementById(id)));
+  Object.keys(secLink).forEach((id) => {
+    const el = document.getElementById(id) || (id === 'footer' && $('footer'));
+    if (el) sio.observe(el);
+  });
   $('#burger').addEventListener('click', () => document.body.classList.toggle('menu-open'));
 
   /* ---------- search ---------- */
@@ -408,7 +424,6 @@ function init() {
       showSec(k);
       if (fine) fl.classList.add('show');
     });
-    r.addEventListener('click', () => showSec(k));
     r.addEventListener('focus', () => showSec(k));
   });
   $('#slist').addEventListener('mouseleave', () => fl.classList.remove('show'));

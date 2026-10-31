@@ -33,11 +33,11 @@ export default function Page() {
           <div>
             <h1 id="pTitle">
               <span className="line">
-                <span>Projects by</span>
+                <span>Projects By</span>
               </span>
               <span className="line">
                 <span>
-                  our <span className="a">specialists.</span>
+                  Our <span className="a">Specialists</span>
                 </span>
               </span>
             </h1>

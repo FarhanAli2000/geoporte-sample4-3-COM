@@ -30,3 +30,110 @@ p{margin:0}
 .fgrid.three{grid-template-columns:minmax(0,1.2fr) minmax(0,.75fr) minmax(0,1.4fr);gap:48px}
 @media (max-width:1100px){.fgrid.three{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}.fgrid.three .fcol:first-child{grid-column:1/-1}.fgrid.three .fcol:last-child{grid-column:auto}}
 @media (max-width:560px){.fgrid.three{grid-template-columns:1fr;gap:34px}}
+
+/* footer "Other locations" button + world map dialog (components/WorldMap.jsx) */
+.floc{border-top:1px solid var(--line);text-align:left;align-items:center;gap:12px;width:100%;margin-top:22px;padding-top:18px;display:flex}
+.floc .fpin{border-color:var(--amber);width:28px;height:28px;transition:background .3s,color .3s}
+.floc .fpin svg{width:12px;height:12px}
+.floc>span:nth-child(2){flex:1;gap:2px;min-width:0;display:grid}
+.floc b{color:var(--fg);font-size:.95rem;font-weight:500;transition:color .3s}
+.floc small{letter-spacing:.22em;text-transform:uppercase;color:var(--dim);font-size:.54rem;font-weight:700}
+.floc>svg{width:14px;height:14px;color:var(--amber);transition:translate .35s var(--ease)}
+.floc:hover b{color:var(--amber)}
+.floc:hover .fpin{background:var(--amber);color:#111}
+.floc:hover>svg{translate:5px}
+.wmap{z-index:400;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;visibility:hidden;background:#060608c7;place-items:center;padding:24px;transition:opacity .35s,visibility .35s;display:grid;position:fixed;inset:0}
+.wmap.open{opacity:1;visibility:visible}
+.wmap-box{background:var(--bg-2);border:1px solid var(--line-2);width:min(1180px,100%);height:min(720px,100%);transition:translate .5s var(--ease);flex-direction:column;display:flex;translate:0 20px;box-shadow:0 40px 90px #0009}
+.wmap.open .wmap-box{translate:0}
+.wmap-head{border-bottom:1px solid var(--line);justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;display:flex}
+.wcap{letter-spacing:.26em;text-transform:uppercase;color:var(--amber);font-size:.56rem;font-weight:700}
+.wmap-head h3{margin-top:6px;font-size:clamp(1.25rem,2.2vw,1.7rem)}
+.wx{border:1px solid var(--line-2);border-radius:50%;flex:none;place-items:center;width:42px;height:42px;transition:background .3s,color .3s,border-color .3s;display:grid}
+.wx svg{width:16px;height:16px}
+.wx:hover{background:var(--amber);border-color:var(--amber);color:#111}
+.wmap-body{flex:1;grid-template-columns:minmax(0,1fr) 320px;min-height:0;display:grid}
+.wmap-map{background:#0d0e12;min-height:0}
+.wmap-side{border-left:1px solid var(--line);padding:18px;overflow-y:auto}
+.wall{border:1px solid var(--line-2);letter-spacing:.2em;text-transform:uppercase;border-radius:999px;width:100%;padding:10px 14px;font-size:.62rem;font-weight:700;transition:background .3s,color .3s,border-color .3s}
+.wall:hover{border-color:var(--amber);color:var(--amber)}
+.wall.on{background:var(--amber);border-color:var(--amber);color:#111}
+.wgroup{margin-top:22px}
+.wgroup h4{letter-spacing:.26em;text-transform:uppercase;color:var(--amber);justify-content:space-between;align-items:baseline;margin:0 0 8px;font-size:.6rem;font-weight:700;display:flex}
+.wgroup h4 small{color:var(--dim);letter-spacing:.1em}
+.wgroup ul{gap:6px;margin:0;padding:0;list-style:none;display:grid}
+.wgroup li{border:1px solid var(--line);padding:12px 14px;transition:border-color .3s,background .3s}
+.wgroup li.on{border-color:var(--amber);background:var(--amber-soft)}
+.wgroup li button{text-align:left;gap:4px;width:100%;display:grid}
+.wgroup li b{font-size:1rem;font-weight:500}
+.wgroup li span{color:var(--muted);font-size:.78rem;line-height:1.45}
+.wgroup li:hover b{color:var(--amber)}
+.wgroup li a{letter-spacing:.22em;text-transform:uppercase;color:var(--amber);align-items:center;gap:6px;margin-top:8px;font-size:.56rem;font-weight:700;display:inline-flex}
+.wgroup li a svg{width:11px;height:11px}
+.wpin i{background:var(--amber);width:18px;height:18px;box-shadow:0 0 0 2px var(--amber),0 0 18px #5aa3e8cc;border:3px solid #0a0a0c;border-radius:50%;display:block}
+.wpin.on i{background:#fff;box-shadow:0 0 0 2px #fff,0 0 22px #fff}
+.leaflet-tooltip.wlabel{border:1px solid var(--amber);color:var(--fg);font-family:var(--f-body);background:#0a0a0ce6;border-radius:4px;gap:1px;padding:5px 9px;line-height:1.2;display:grid;box-shadow:0 6px 18px #00000080}
+.leaflet-tooltip.wlabel:before{display:none}
+.wlabel b{font-size:.82rem;font-weight:600}
+.wlabel small{letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-size:.5rem;font-weight:700}
+:is(.wmap,.c-map) .leaflet-container{font-family:var(--f-body);background:#aad3df}
+:is(.wmap,.c-map) .leaflet-bar a{background:var(--bg-3);color:var(--fg);border-color:var(--line-2)}
+:is(.wmap,.c-map) .leaflet-bar a:hover{background:var(--amber);color:#111}
+:is(.wmap,.c-map) .leaflet-control-attribution{color:var(--dim);background:#0a0a0cb3}
+:is(.wmap,.c-map) .leaflet-control-attribution a{color:var(--muted)}
+:is(.wmap,.c-map) .leaflet-control-layers{color:var(--fg);background:#0a0a0ce0;border-radius:6px;box-shadow:0 6px 18px #0006;border:1px solid var(--line-2)!important}
+:is(.wmap,.c-map) .leaflet-control-layers-base{gap:12px;display:flex}
+:is(.wmap,.c-map) .leaflet-control-layers-base label{margin:0}
+:is(.wmap,.c-map) .leaflet-control-layers-base span{letter-spacing:.16em;text-transform:uppercase;cursor:pointer;align-items:center;gap:5px;font-size:.62rem;font-weight:700;display:inline-flex}
+:is(.wmap,.c-map) .leaflet-control-layers-selector{accent-color:var(--amber);margin:0}
+@media (max-width:860px){.wmap{padding:0}
+.wmap-box{border:0;height:100%}
+.wmap-body{grid-template-rows:minmax(0,1fr) auto;grid-template-columns:1fr}
+.wmap-side{border-left:0;border-top:1px solid var(--line);max-height:40svh}
+.wgroup{margin-top:16px}}
+
+/* contact-section office map (components/OfficeMap.jsx) */
+.c-map{position:relative;margin-top:2px;background:var(--card);border:1px solid var(--line);overflow:hidden}
+.c-map .map-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.c-map .map-tag{font-size:.56rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--fg)}
+.c-map .map-tag b{color:var(--amber);font-weight:700}
+.c-map .map-chips{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}
+.c-map .map-chips button{padding:7px 13px;border-radius:999px;background:rgba(10,10,12,.82);border:1px solid var(--line-2);font-size:.72rem;color:rgba(242,240,236,.85);transition:background .3s,color .3s,border-color .3s}
+.c-map .map-chips button:hover{border-color:var(--amber);color:var(--amber)}
+.c-map .map-chips button.on{background:var(--amber);border-color:var(--amber);color:#111}
+.c-map .map{width:100%;height:clamp(340px,48vw,500px);background:#0d0e12;z-index:0}
+.office[role=button]{cursor:pointer}
+.office.map-on{border-color:var(--amber)}
+@media (max-width:560px){.c-map .map-head{flex-direction:column;align-items:flex-start}.c-map .map-chips{justify-content:flex-start}}
+
+/* enquiry form: phone dial picker, selects, suburb suggestions, consent (components/EnquiryForm.jsx) */
+.form .field textarea{resize:none;min-height:0;line-height:1.5;display:block;overflow:hidden}
+.form .field select{border:0;border-bottom:1px solid var(--line-2);width:100%;font:inherit;color:var(--fg);appearance:none;cursor:pointer;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa0aa' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 2px bottom 11px/14px no-repeat;border-radius:0;outline:none;padding:22px 26px 9px 2px;font-size:.95rem}
+.form .field select option{background:var(--card);color:var(--fg)}
+.form .field.sel label{color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-size:.64rem;translate:0 -12px}
+.form .field.sel:focus-within label{color:var(--amber)}
+.form .field.sel:focus-within .ul{transform:scaleX(1)}
+.form .phone-row{align-items:stretch;display:flex}
+.form .dial{flex:none;position:relative}
+.form .field:has(.dial-pop){z-index:40}
+.form .dial-btn{border:0;border-bottom:1px solid var(--line-2);min-width:104px;height:100%;font:inherit;color:var(--fg);cursor:pointer;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa0aa' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 6px bottom 11px/14px no-repeat;outline:none;align-items:center;gap:8px;padding:22px 26px 9px 2px;font-size:.95rem;display:flex}
+.form .dial .flag{object-fit:cover;border-radius:2px;flex:none;width:20px;height:15px;box-shadow:0 0 0 1px #ffffff1f}
+.form .dial-pop{z-index:30;background:var(--card);border:1px solid var(--line-2);border-radius:10px;width:300px;max-width:calc(100vw - 32px);position:absolute;top:calc(100% + 6px);left:0;overflow:hidden;box-shadow:0 18px 40px #00000073}
+.form .dial-pop .dial-search{border:0;border-bottom:1px solid var(--line-2);width:100%;font:inherit;color:var(--fg);background:0 0;outline:none;padding:12px 14px;font-size:.88rem}
+.form .dial-pop .dial-search::placeholder{color:var(--muted);opacity:1}
+.form .dial-list{overscroll-behavior:contain;max-height:260px;margin:0;padding:6px 0;list-style:none;overflow-y:auto}
+.form .dial-list li{cursor:pointer;align-items:center;gap:10px;padding:8px 14px;font-size:.88rem;display:flex}
+.form .dial-list li.on{background:#ffffff0f}
+.form .dial-list li[aria-selected=true] .dial-name{color:var(--amber)}
+.form .dial-name{white-space:nowrap;text-overflow:ellipsis;flex:1;min-width:0;overflow:hidden}
+.form .dial-code{color:var(--muted);font-variant-numeric:tabular-nums}
+.form .dial-list .dial-none{color:var(--muted);cursor:default}
+.form .phone-row input{border-left:1px solid var(--line-2);flex:1;min-width:0;padding-left:14px}
+.form .phone-row input::placeholder{color:var(--muted);opacity:1}
+.form .phone-row input:focus::placeholder{color:var(--dim)}
+.form .fnote{color:var(--muted);grid-column:1/-1;margin-top:-6px;font-size:.8rem}
+.form .consent{color:var(--muted);cursor:pointer;grid-column:1/-1;align-items:flex-start;gap:10px;font-size:.8rem;line-height:1.5;display:flex}
+.form .consent input{width:16px;height:16px;accent-color:var(--amber);cursor:pointer;flex:none;margin-top:2px}
+.form .consent a{color:var(--amber);text-underline-offset:2px;text-decoration:underline}
+.form .loc-pop{width:100%}
+.form .loc-pop .dial-list li[aria-selected=true] .dial-name{color:var(--fg)}

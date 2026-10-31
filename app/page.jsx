@@ -279,8 +279,8 @@ export default function Page() {
             <div className="exp-stats">
               <div className="exp-stat">
                 <b>
-                  <span className="count" data-to="100">
-                    100
+                  <span className="count" data-to="200">
+                    200
                   </span>
                   <em>+</em>
                 </b>
@@ -382,7 +382,7 @@ export default function Page() {
           <ul className="slist" id="slist">
             {SECTORS.map((s, i) => (
               <li key={s.title}>
-                <button className="srow" data-i={i}>
+                <a className="srow" data-i={i} href={`/projects?sector=${s.filter}#index`}>
                   <span className="n">{pad(i + 1)}</span>
                   <span>
                     <b>{s.title}</b>
@@ -391,7 +391,7 @@ export default function Page() {
                   <span className="ring">
                     <Arrow />
                   </span>
-                </button>
+                </a>
               </li>
             ))}
           </ul>

@@ -1,5 +1,6 @@
 import { EMAIL, LEGAL, OFFICES, PHONES, homeLink } from '@/lib/nav';
 import { Mail, Pin } from './icons';
+import WorldMap from './WorldMap';
 
 export default function Footer({ home = false }) {
   const h = (hash) => homeLink(home, hash);
@@ -45,6 +46,7 @@ export default function Footer({ home = false }) {
                 <li key={city}><span className="fpin"><Pin /></span><div><b>{city} <small>{country}</small></b><p>{addr}</p></div></li>
               ))}
             </ul>
+            <WorldMap />
           </div>
         </div>
         <div className="bigword" id="bigword" aria-hidden="true">
