@@ -2,20 +2,18 @@ import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/team';
 import OneTeamBand from '@/components/OneTeamBand';
-import { Arrow } from '@/components/icons';
 import '@/styles/pages.css';
 
 export const metadata = pageMeta({
-  title: 'Our Team | Chartered Engineers & Geologists | Geoporte',
-  description:
-    'Meet Geoporte’s chartered geotechnical, structural and civil engineers, engineering geologists and project staff with local and international experience.',
-  path: '/our-team',
+  title: 'Leadership | Managing Director | Geoporte',
+  description: 'Senior engineering leadership on every project, from first conversation to final design. Meet Geoporte’s Managing Director, Qaiser Hayat.',
+  path: '/leadership',
   image: 'https://geoporte.com.au/images/real/walking-geoporte-vests.jpg',
 });
 
 export default function Page() {
   return (
-    <Site section="about" current="our-team">
+    <Site section="about" current="leadership">
       {/* PAGE HERO */}
       <section className="phero" id="top">
         <div className="phero-media" id="pheroMedia">
@@ -25,17 +23,12 @@ export default function Page() {
           <div>
             <h1 id="pTitle">
               <span className="line">
-                <span>
-                  Our <span className="a">Team</span>
-                </span>
+                <span className="a">Leadership</span>
               </span>
             </h1>
           </div>
           <div className="phero-side" id="pSide">
-            <p>Meet the engineers, geologists and project professionals behind Geoporte.</p>
-            <a href="#team" className="pill pill-a magnetic">
-              Meet the team <Arrow />
-            </a>
+            <p>Senior engineering leadership on every project, from first conversation to final design.</p>
           </div>
         </div>
       </section>

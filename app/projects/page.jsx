@@ -53,21 +53,22 @@ export default function Page() {
           </div>
         </div>
       </section>
-      {/* STATS (counted from the project list below) */}
+      {/* STATS (sectors and countries counted from the project list below) */}
       <section className="stats">
         <div className="wrap stats-grid">
           <div className="stat">
             <b>
-              <span className="count" id="stProjects">
-                27
+              <span className="count" id="stProjects" data-to="200">
+                200
               </span>
+              <em>+</em>
             </b>
             <p>Projects by our specialists</p>
           </div>
           <div className="stat">
             <b>
               <span className="count" id="stSectors">
-                3
+                5
               </span>
             </b>
             <p>Project sectors</p>
@@ -80,14 +81,6 @@ export default function Page() {
             </b>
             <p>Countries</p>
           </div>
-          <div className="stat">
-            <b>
-              <span className="count" id="stRegions">
-                5
-              </span>
-            </b>
-            <p>Regions across the world</p>
-          </div>
         </div>
       </section>
       {/* SECTORS */}
@@ -96,7 +89,7 @@ export default function Page() {
           <div className="sect-head">
             <div className="sec-head">
               <div className="cap">Projects by sector</div>
-              <h2 className="split">Three sectors. One standard of care.</h2>
+              <h2 className="split">Five Sectors<br />One Standard Of Care</h2>
             </div>
             <p className="rv">Select a sector to filter the project index below.</p>
           </div>

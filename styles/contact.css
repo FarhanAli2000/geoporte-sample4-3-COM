@@ -14,7 +14,7 @@
 .form .field{position:relative;min-width:0}
 .form .field.full{grid-column:1/-1}
 .form .field input,.form .field textarea{width:100%;border:0;border-bottom:1px solid var(--line-2);background:transparent;padding:22px 2px 9px;font:inherit;font-size:.95rem;color:var(--fg);outline:none;border-radius:0;resize:vertical}
-.form .field textarea{min-height:100px}
+.form .field textarea{resize:none;min-height:0;line-height:1.5;display:block;overflow:hidden}
 .form .field label{position:absolute;left:2px;top:18px;font-size:.88rem;color:var(--muted);pointer-events:none;transition:translate .3s var(--ease),font-size .3s,color .3s}
 .form .field .ul{position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);box-shadow:0 0 10px var(--amber)}
 .form .field input:focus~.ul,.form .field textarea:focus~.ul{transform:scaleX(1)}

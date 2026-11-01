@@ -411,23 +411,21 @@ function init() {
   autoplay(pS, $('#pSlider'), 5500);
 
   /* ---------- sectors ---------- */
-  const rows = $$('.srow'),
-    fimgs = $$('#floatImg img'),
-    pimgs = $$('#secPreview img');
-  const showSec = (k) => {
-    rows.forEach((r, j) => r.classList.toggle('on', j === k));
-    fimgs.forEach((im, j) => im.classList.toggle('on', j === k));
-    pimgs.forEach((im, j) => im.classList.toggle('on', j === k));
-  };
-  rows.forEach((r, k) => {
-    r.addEventListener('mouseenter', () => {
-      showSec(k);
+  // Hovering a sector card shows its photo in the floating image that trails the cursor.
+  const cards = $$('.seccard'),
+    fimgs = $$('#floatImg img');
+  cards.forEach((c, k) => {
+    c.addEventListener('mouseenter', () => {
+      fimgs.forEach((im, j) => im.classList.toggle('on', j === k));
       if (fine) fl.classList.add('show');
     });
-    r.addEventListener('focus', () => showSec(k));
+    c.addEventListener('mouseleave', () => fl.classList.remove('show'));
+    c.addEventListener('mousemove', (e) => {
+      const r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', e.clientX - r.left + 'px');
+      c.style.setProperty('--my', e.clientY - r.top + 'px');
+    });
   });
-  $('#slist').addEventListener('mouseleave', () => fl.classList.remove('show'));
-  showSec(0);
 
   /* ---------- counters ---------- */
   const fmt = (n) => n.toLocaleString('en-US');
@@ -576,14 +574,14 @@ function init() {
       ease: 'power4.inOut',
       scrollTrigger: { trigger: '#pSlider', start: 'top 88%' },
     });
-    gsap.from('.srow', {
-      x: 80,
+    gsap.from('.seccard', {
+      y: 70,
       opacity: 0,
-      duration: 0.9,
+      duration: 1,
       stagger: 0.1,
       ease: 'power3.out',
       clearProps: 'transform,opacity',
-      scrollTrigger: { trigger: '#slist', start: 'top 85%' },
+      scrollTrigger: { trigger: '#secCards', start: 'top 85%' },
     });
     gsap.from('.stat', {
       y: 40,

@@ -20,8 +20,10 @@ function init() {
   /* ---------- data: geoporte.com.au/projects ---------- */
   const SECTORS = [
     ['Transport Projects', '/images/hero-video-poster.jpg'],
+    ['Water Projects', '/images/dam-spillway.jpg'],
+    ['Energy & Resources Projects', '/images/telecom.jpg'],
+    ['Ports & Marine Projects', '/images/real/marine-port-aerial.jpg'],
     ['Built Environment Projects', '/images/cable-bridge-wide.jpg'],
-    ['Energy, Resources & Water Projects', '/images/dam-spillway.jpg'],
   ];
   const REGION = {
     Australia: 'Australia',
@@ -42,23 +44,23 @@ function init() {
     ['City Rail Link (CRL)', 'Auckland', 'New Zealand', 0, '/images/hero-video-poster.jpg'],
     ['Etihad Rail', 'Abu Dhabi', 'UAE', 0, '/images/real/mountain-rock-cut.jpg'],
     ['Dubai Metro Extension', 'Dubai', 'UAE', 0, '/images/cable-bridge-wide.jpg'],
-    ['Dubai Water Canal', 'Dubai', 'UAE', 0, '/images/real/uae-dewatering-reclamation.jpg'],
+    ['Dubai Water Canal', 'Dubai', 'UAE', 1, '/images/real/uae-dewatering-reclamation.jpg'],
     ['Hyderabad Metro Project', 'Hyderabad', 'India', 0, '/images/hero-bridge.jpg'],
     ['Blackfriars Railway Bridge', 'London', 'United Kingdom', 0, '/images/cable-bridge.jpg'],
     ['Network Rail Osborne Station', 'Kent', 'United Kingdom', 0, '/images/sunset-bridge.jpg'],
     ['London Underground Maintenance Works', 'London', 'United Kingdom', 0, '/images/engineers.jpg'],
     ['Network Rail Silkstream Junction', 'England', 'United Kingdom', 0, '/images/hero-video-poster.jpg'],
-    ['Greensborough and Frankston Car Parks', 'Melbourne, Victoria', 'Australia', 1, '/images/cable-bridge-wide.jpg'],
-    ['Osborne Naval Shipbuilding Precinct', 'Adelaide, South Australia', 'Australia', 1, '/images/coastal-bridge.jpg'],
-    ['Etihad Museum', 'Dubai', 'UAE', 1, '/images/service-2.jpg'],
-    ['Marsa Al Seef Khor', 'Dubai', 'UAE', 1, '/images/real/uae-reclamation-crane.jpg'],
-    ['Sohar Industrial Port Company (SIPC)', 'Dubai', 'UAE', 1, '/images/real/marine-port-aerial.jpg'],
-    ['Dammam Industrial City 3', 'Dammam', 'Saudi Arabia', 1, '/images/real/uae-earthworks-loader.jpg'],
-    ['Sarb Artificial Islands', 'Abu Dhabi', 'UAE', 1, '/images/real/breakwater-construction.jpg'],
-    ['Yas Island Development', 'Abu Dhabi', 'UAE', 1, '/images/real/uae-vibro-rig.jpg'],
+    ['Greensborough and Frankston Car Parks', 'Melbourne, Victoria', 'Australia', 4, '/images/cable-bridge-wide.jpg'],
+    ['Osborne Naval Shipbuilding Precinct', 'Adelaide, South Australia', 'Australia', 3, '/images/coastal-bridge.jpg'],
+    ['Etihad Museum', 'Dubai', 'UAE', 4, '/images/service-2.jpg'],
+    ['Marsa Al Seef Khor', 'Dubai', 'UAE', 4, '/images/real/uae-reclamation-crane.jpg'],
+    ['Sohar Industrial Port Company (SIPC)', 'Dubai', 'UAE', 3, '/images/real/marine-port-aerial.jpg'],
+    ['Dammam Industrial City 3', 'Dammam', 'Saudi Arabia', 4, '/images/real/uae-earthworks-loader.jpg'],
+    ['Sarb Artificial Islands', 'Abu Dhabi', 'UAE', 3, '/images/real/breakwater-construction.jpg'],
+    ['Yas Island Development', 'Abu Dhabi', 'UAE', 4, '/images/real/uae-vibro-rig.jpg'],
     ['AGL Torrens Island Battery Facility', 'Adelaide, South Australia', 'Australia', 2, '/images/telecom.jpg'],
-    ['Strategic Tunnel Enhancement Programme (STEP)', 'Abu Dhabi', 'UAE', 2, '/images/geotech-site.jpg'],
-    ['Pakistan Gasport Liquefied Natural Gas Berth', 'Karachi', 'Pakistan', 2, '/images/coastal-bridge.jpg'],
+    ['Strategic Tunnel Enhancement Programme (STEP)', 'Abu Dhabi', 'UAE', 1, '/images/geotech-site.jpg'],
+    ['Pakistan Gasport Liquefied Natural Gas Berth', 'Karachi', 'Pakistan', 3, '/images/coastal-bridge.jpg'],
     ['Das Island Accommodation Project', 'Abu Dhabi', 'UAE', 2, '/images/service-7.jpg'],
     ['Hamriyah Free Zone Fuel Pipe Protection Works', 'Sharjah', 'UAE', 2, '/images/dam-spillway.jpg'],
   ];
@@ -66,10 +68,8 @@ function init() {
   const REGIONS = [...new Set(P.map(regionOf))];
   const countIn = (arr, f) => arr.filter(f).length;
 
-  $('#stProjects').dataset.to = P.length;
   $('#stSectors').dataset.to = SECTORS.length;
   $('#stCountries').dataset.to = new Set(P.map((p) => p[2])).size;
-  $('#stRegions').dataset.to = REGIONS.length;
   $$('.count').forEach((c) => (c.textContent = c.dataset.to));
 
   $('#sectGrid').innerHTML = SECTORS.map(
@@ -83,7 +83,11 @@ function init() {
     ).join('');
   $('#fregs').innerHTML =
     `<button class="tab on" data-r="">All</button>` + REGIONS.map((r) => `<button class="tab" data-r="${r}">${r}</button>`).join('');
-  $('#regions').innerHTML = REGIONS.map((r) => `<li><b>${r}</b><span>${pad(countIn(P, (p) => regionOf(p) === r))}</span></li>`).join('');
+  // Regions shown in the "Local knowledge" list with a fixed count, for project experience not in the project list above.
+  const EXTRA_REGIONS = [['Canada', 2]];
+  $('#regions').innerHTML = [...REGIONS.map((r) => [r, countIn(P, (p) => regionOf(p) === r)]), ...EXTRA_REGIONS]
+    .map(([r, n]) => `<li><b>${r}</b><span>${pad(n)}</span></li>`)
+    .join('');
   $('#floatImg').innerHTML = P.map((p) => `<img src="${p[4]}" alt="">`).join('');
 
   /* ---------- filtering ---------- */

@@ -124,7 +124,7 @@ export default function Page() {
             </div>
             <div className="tag">
               <img src="/images/geoporte-logo.png" alt="" />
-              GE<em>O</em>PORTE
+              <span>GE<em>O</em>PORTE</span>
             </div>
           </div>
           <div className="t-copy">

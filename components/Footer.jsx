@@ -20,7 +20,7 @@ export default function Footer({ home = false }) {
             <ul>
               <li><a href={h()}>Home</a></li>
               <li><a href="/about-us">About Us</a></li>
-              <li><a href="/our-team">Our Team</a></li>
+              <li><a href="/leadership">Leadership</a></li>
               <li><a href="/projects">Projects</a></li>
               <li><a href="/publications">Publications</a></li>
               <li><a href="/contact-us">Contact Us</a></li>

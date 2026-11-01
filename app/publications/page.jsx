@@ -9,7 +9,7 @@ export const metadata = pageMeta({
   description:
     'Conference presentations and technical papers by Geoporte specialists on digital transformation in geotechnics and tunnelling projects in Melbourne.',
   path: '/publications',
-  image: 'https://geoporte.com.au/images/real/conference-talk.jpg',
+  image: 'https://geoporte.com.au/images/real/state-library-talk.jpg',
 });
 
 export default function Page() {
@@ -30,7 +30,7 @@ export default function Page() {
       {/* PAGE HERO */}
       <section className="phero" id="top">
         <div className="phero-media" id="pheroMedia">
-          <img src="/images/real/conference-talk.jpg" alt="Geoporte director presenting at a geotechnical event" />
+          <img src="/images/real/state-library-talk.jpg" alt="Geoporte Managing Director presenting at State Library Victoria" style={{ objectPosition: '50% 8%' }} />
         </div>
         <div className="wrap phero-in">
           <div>
@@ -40,7 +40,7 @@ export default function Page() {
               </span>
               <span className="line">
                 <span>
-                  &amp; <span className="a">papers.</span>
+                  &amp; <span className="a">Papers</span>
                 </span>
               </span>
             </h1>

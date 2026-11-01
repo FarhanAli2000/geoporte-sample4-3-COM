@@ -29,7 +29,7 @@ export default function Page() {
                 <span>Proof Engineering</span>
               </span>
               <span className="line">
-                <span className="a">of geotechnical design</span>
+                <span className="a">of Geotechnical Design</span>
               </span>
             </h1>
           </div>

@@ -3,9 +3,11 @@ import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/home';
 import { Arrow, ChevronLeft, ChevronRight, Close } from '@/components/icons';
 import ServiceIcon from '@/components/home/ServiceIcon';
+import SectorIcon from '@/components/home/SectorIcon';
 import EnquiryForm from '@/components/EnquiryForm';
 import Contact from '@/components/Contact';
 import { FEATURED_PROJECTS, SECTORS, SERVICE_CARDS, pad } from '@/lib/home-data';
+import { SERVICES } from '@/lib/nav';
 import '@/styles/home.css';
 import '@/styles/home-contact.css';
 
@@ -191,25 +193,18 @@ export default function Page() {
           Live · Steel truss bridge
         </div>
       </section>
-      <div className="ticker" aria-hidden="true">
+      {/* Service names scroll by as links; the list is doubled for a seamless loop, the copy hidden from screen readers and Tab */}
+      <nav className="ticker" aria-label="Our services">
         <div className="ticker-t">
-          <span>Civil Engineering</span>
-          <span>Design &amp; Drafting</span>
-          <span>Geotechnical</span>
-          <span>Structural</span>
-          <span>Stormwater &amp; Flood</span>
-          <span>Project Management</span>
-          <span>Advisory</span>
-          <span>Telecommunications</span> <span>Civil Engineering</span>
-          <span>Design &amp; Drafting</span>
-          <span>Geotechnical</span>
-          <span>Structural</span>
-          <span>Stormwater &amp; Flood</span>
-          <span>Project Management</span>
-          <span>Advisory</span>
-          <span>Telecommunications</span>
+          {[0, 1].map((copy) =>
+            SERVICES.map(([slug, label]) => (
+              <a key={copy + label} href={slug ? '/' + slug : '#services'} {...(copy ? { 'aria-hidden': true, tabIndex: -1 } : {})}>
+                {label}
+              </a>
+            )),
+          )}
         </div>
-      </div>
+      </nav>
       {/* SERVICES */}
       <section className="services" id="services">
         <div className="wrap">
@@ -366,35 +361,28 @@ export default function Page() {
       </section>
       {/* SECTORS */}
       <section className="sectors" id="sectors">
-        <div className="wrap sec-grid">
-          <div>
+        <div className="wrap">
+          <div className="head-row">
             <div className="sec-head">
               <div className="cap">Sectors</div>
               <h2 className="split">Where our engineering makes an impact.</h2>
             </div>
-            <p className="rv">Five sectors, one integrated team. Hover a sector to see the work behind it.</p>
-            <div className="sec-preview" id="secPreview">
-              {SECTORS.map((s, i) => (
-                <img key={s.title} src={s.img} alt="" className={i ? '' : 'on'} loading="lazy" />
-              ))}
+            <div className="side">
+              <p className="rv">Five sectors, one integrated team. Select a sector to see the projects behind it.</p>
             </div>
           </div>
-          <ul className="slist" id="slist">
+          <div className="sec-cards" id="secCards">
             {SECTORS.map((s, i) => (
-              <li key={s.title}>
-                <a className="srow" data-i={i} href={`/projects?sector=${s.filter}#index`}>
-                  <span className="n">{pad(i + 1)}</span>
-                  <span>
-                    <b>{s.title}</b>
-                    <small>{s.text}</small>
-                  </span>
-                  <span className="ring">
-                    <Arrow />
-                  </span>
-                </a>
-              </li>
+              <a className="seccard" key={s.title} data-i={i} href={`/projects?sector=${s.filter}#index`}>
+                <span className="ic"><SectorIcon name={s.icon} /></span>
+                <span className="big">{pad(i + 1)}</span>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+                <span className="more">View projects <Arrow /></span>
+                <span className="edge" />
+              </a>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
       {/* STATS */}
@@ -402,8 +390,8 @@ export default function Page() {
         <div className="wrap stats-grid">
           <div className="stat">
             <b>
-              <span className="count" data-to="1000">
-                1,000
+              <span className="count" data-to="200">
+                200
               </span>
               <em>+</em>
             </b>
@@ -414,12 +402,12 @@ export default function Page() {
           </div>
           <div className="stat">
             <b>
-              <span className="count" data-to="20">
-                20
+              <span className="count" data-to="200">
+                200
               </span>
               <em>+</em>
             </b>
-            <p>Years of combined engineering experience</p>
+            <p>Years of leadership team combined engineering experience</p>
             <div className="t2">
               <i />
             </div>

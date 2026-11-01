@@ -96,7 +96,7 @@
 .phero-side p{color:rgba(242,240,236,.84);font-size:.98rem;max-width:25rem}
 /* ---------- stats ---------- */
 .stats{padding-block:60px;border-bottom:1px solid var(--line)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
 .stat{padding:6px 28px;border-left:1px solid var(--line);min-width:0}
 .stat:first-child{border-left:0;padding-left:0}
 .stat b{display:block;font:200 clamp(2.8rem,5vw,4.2rem)/1 var(--f-display);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
@@ -106,7 +106,9 @@
 .sects{padding-block:100px 40px}
 .sect-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:40px;align-items:end}
 .sect-head p{color:var(--muted);font-size:.9rem;max-width:28rem}
-.sect-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;margin-top:50px}
+.sect-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;margin-top:50px}
+.sect-grid .scard{grid-column:span 2}
+.sect-grid .scard:nth-child(n+4){grid-column:span 3} /* 5 sectors: 3 cards on top, 2 wider below */
 .scard{position:relative;overflow:hidden;isolation:isolate;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;text-align:left;background:var(--card);min-width:0}
 .scard .img{position:absolute;inset:0;z-index:-2}
 .scard .img img{width:100%;height:100%;object-fit:cover;filter:saturate(.75) brightness(.55);transition:scale 1.2s var(--ease),filter .6s}
@@ -223,6 +225,7 @@
   .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:30px}
   .stat:nth-child(3){border-left:0;padding-left:0}
   .sect-grid{grid-template-columns:1fr}
+  .sect-grid .scard,.sect-grid .scard:nth-child(n+4){grid-column:auto}
   .scard{min-height:300px}
   .prow{grid-template-columns:36px minmax(0,1fr) 34px;gap:14px;padding:18px 2px}
   .prow .loc{grid-column:2;grid-row:2;margin-top:-10px;font-size:.78rem}

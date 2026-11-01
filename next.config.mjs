@@ -6,6 +6,7 @@ const nextConfig = {
     return [
       { source: '/hero-sample-5.html', destination: '/', permanent: true },
       { source: '/sectors', destination: '/', permanent: true }, // page was briefly live before Sectors was removed
+      { source: '/our-team', destination: '/leadership', permanent: true }, // page renamed to Leadership
       { source: '/:slug.html', destination: '/:slug', permanent: true },
     ];
   },

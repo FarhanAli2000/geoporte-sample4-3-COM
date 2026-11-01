@@ -69,7 +69,7 @@ export default function OfficeMap() {
   return (
     <div className="c-map rv" ref={wrap}>
       <div className="map-head">
-        <div className="map-tag"><b>{OFFICES.length}</b> offices · {COUNTRIES.join(' & ')}</div>
+        <div className="map-tag"><b>{OFFICES.length}</b> offices · {COUNTRIES.slice(0, -1).join(', ')} &amp; {COUNTRIES.at(-1)}</div>
         <div className="map-chips" role="group" aria-label="Show office on map">
           <button type="button" className={sel < 0 ? 'on' : undefined} onClick={() => setSel(-1)}>All offices</button>
           {OFFICES.map(([city], i) => (

@@ -107,7 +107,6 @@ p{margin:0}
 @media (max-width:560px){.c-map .map-head{flex-direction:column;align-items:flex-start}.c-map .map-chips{justify-content:flex-start}}
 
 /* enquiry form: phone dial picker, selects, suburb suggestions, consent (components/EnquiryForm.jsx) */
-.form .field textarea{resize:none;min-height:0;line-height:1.5;display:block;overflow:hidden}
 .form .field select{border:0;border-bottom:1px solid var(--line-2);width:100%;font:inherit;color:var(--fg);appearance:none;cursor:pointer;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa0aa' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 2px bottom 11px/14px no-repeat;border-radius:0;outline:none;padding:22px 26px 9px 2px;font-size:.95rem}
 .form .field select option{background:var(--card);color:var(--fg)}
 .form .field.sel label{color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-size:.64rem;translate:0 -12px}
@@ -137,3 +136,6 @@ p{margin:0}
 .form .consent a{color:var(--amber);text-underline-offset:2px;text-decoration:underline}
 .form .loc-pop{width:100%}
 .form .loc-pop .dial-list li[aria-selected=true] .dial-name{color:var(--fg)}
+
+/* custom dot + ring cursor turned off site-wide; the page scripts still move them, so hide rather than remove */
+.cursor,.cursor-dot{display:none!important}
