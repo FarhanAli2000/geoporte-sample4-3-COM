@@ -1,6 +1,6 @@
 # Geoporte
 
-> Geoporte is an engineering design consultancy providing civil, geotechnical, structural, stormwater, project controls, advisory and telecom engineering services, with offices in Melbourne, Sydney, Perth (Australia) and Auckland (New Zealand).
+> Geoporte is an engineering design consultancy providing civil, geotechnical, structural, stormwater, project controls, advisory and telecom engineering services, with offices in Melbourne, Sydney, Perth (Australia), Auckland (New Zealand), Dubai (United Arab Emirates), Nottingham (United Kingdom), Austin (United States) and Oakville (Canada).
 
 Contact: enquiries@geoporte.com.au · +61 (0) 431 55 4626 (Australia) · +64 (0) 212 87 0714 (New Zealand). Head office: Tower 5, Collins Square, 727 Collins Street, Melbourne VIC 3008.
 
@@ -10,7 +10,7 @@ Contact: enquiries@geoporte.com.au · +61 (0) 431 55 4626 (Australia) · +64 (0)
 - [Leadership | Managing Director](https://geoporte.com.au/leadership): Senior engineering leadership on every project, from first conversation to final design. Meet Geoporte’s Managing Director, Qaiser Hayat.
 - [Projects | Transport, Energy & Water](https://geoporte.com.au/projects): Explore projects delivered by Geoporte specialists across transport, built environment, energy, resources and water in Australia, NZ, the UAE and the UK.
 - [Publications & Technical Papers](https://geoporte.com.au/publications): Conference presentations and technical papers by Geoporte specialists on digital transformation in geotechnics and tunnelling projects in Melbourne.
-- [Contact Us](https://geoporte.com.au/contact-us): Send Geoporte an enquiry or contact the Melbourne, Sydney, Perth, Auckland and Austin offices by email or phone.
+- [Contact Us](https://geoporte.com.au/contact-us): Send Geoporte an enquiry or contact the Melbourne, Sydney, Perth, Auckland, Dubai, Nottingham, Austin and Oakville offices by email or phone.
 
 ## Services
 - [Engineering Advisory Services](https://geoporte.com.au/advisory-services): Civil and geotechnical advisory: feasibility studies, risk management, regulatory compliance, construction and asset management, from concept to completion.

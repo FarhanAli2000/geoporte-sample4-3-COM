@@ -10,7 +10,7 @@ import '@/styles/contact.css';
 export const metadata = pageMeta({
   title: 'Contact Us | Geoporte',
   description:
-    'Contact Geoporte about civil, geotechnical and structural engineering projects. Send an enquiry or reach our offices in Melbourne, Sydney, Perth, Auckland and Austin.',
+    'Contact Geoporte about civil, geotechnical and structural engineering projects. Send an enquiry or reach our offices in Melbourne, Sydney, Perth, Auckland, Dubai, Nottingham, Austin and Oakville.',
   path: '/contact-us',
   image: 'https://geoporte.com.au/images/real/contact-drone-team.jpg',
 });
@@ -57,7 +57,7 @@ export default function Page() {
             <ul className="e-list rv">
               <li>We reply within one business day</li>
               <li>Senior engineers involved from investigation through to construction</li>
-              <li>Offices in Melbourne, Sydney, Perth, Auckland and Austin</li>
+              <li>Offices in Melbourne, Sydney, Perth, Auckland, Dubai, Nottingham, Austin and Oakville</li>
             </ul>
           </div>
           <EnquiryForm />

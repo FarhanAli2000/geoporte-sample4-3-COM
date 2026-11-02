@@ -6,6 +6,7 @@ const EMAIL = 'enquiries@geoporte.com';
 const PHONES = [
   ['+61431554626', '+61 (0) 431 55 4626', 'Australia'],
   ['+64212870714', '+64 (0) 21 28 70714', 'New Zealand'],
+  ['+971558803645', '+971 55 880 3645', 'United Arab Emirates'],
 ];
 
 // Contact details block, shown on the Home and Contact Us pages only; `cta` adds an "Email us" strip,

@@ -76,6 +76,7 @@ p{margin:0}
 .leaflet-tooltip.wlabel:before{display:none}
 .wlabel b{font-size:.82rem;font-weight:600}
 .wlabel small{letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-size:.5rem;font-weight:700}
+.wfar .leaflet-tooltip.wlabel{padding:2px 6px}.wfar .wlabel b{font-size:.68rem}.wfar .wlabel small{display:none}
 :is(.wmap,.c-map) .leaflet-container{font-family:var(--f-body);background:#aad3df}
 :is(.wmap,.c-map) .leaflet-bar a{background:var(--bg-3);color:var(--fg);border-color:var(--line-2)}
 :is(.wmap,.c-map) .leaflet-bar a:hover{background:var(--amber);color:#111}
